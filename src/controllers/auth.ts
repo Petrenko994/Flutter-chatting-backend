@@ -4,7 +4,11 @@ import sendEmail from '../helpers/sendEmail'
 // import crypto from 'crypto'
 import passport from 'passport'
 import { verificationHtml } from '../html/confirmation-code-email'
-import { Strategy as GoogleStrategy } from 'passport-google-oauth20'
+import { Strategy as GoogleStrategy } from 'passport-google-oauth20';
+
+require('dotenv').config();
+
+const GoogleStrategy = require('passport-google-oauth20').Strategy;
 
 passport.use(
   new GoogleStrategy(
